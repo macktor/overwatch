@@ -21,6 +21,7 @@ var gulp      = require("gulp"),
   notify      = require("gulp-notify"),
   concat      = require("gulp-concat"),
   uglify      = require("gulp-uglify");
+  sass        = require("gulp-ruby-sass");
 
 
 
@@ -38,12 +39,18 @@ gulp.task("scripts", function() {
     .pipe(gulp.dest("Resources"))
     .pipe(notify({message:"Coffee compiled"}));
 });
+gulp.task("sass", function() {
+  return sass('Sources/*.scss')
+    .on('error', sass.logError)
+    .pipe(gulp.dest('Resources'))
+    .pipe(notify({message:"Sass compiled"}));
+});
 
 ///////////
 // TASKS //
 ///////////
 
-gulp.task("default", ["scripts", "build"]);
+gulp.task("default", ["scripts", "sass"]);
 
 
 
@@ -54,4 +61,5 @@ gulp.task("default", ["scripts", "build"]);
 gulp.task("watch", function() {
   console.log("-- GULP IS WATCHING");
   gulp.watch(["Sources/**/*.coffee"], ["scripts"]);
+  gulp.watch(["Sources>/*.scss"], ["sass"]);
 });

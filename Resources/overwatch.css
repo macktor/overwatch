@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Overwatch-Title";
+  src: url("http://us.battle.net/forums/static/fonts/bignoodletoo/bignoodletoo.woff") format("woff"); }
+@font-face {
+  font-family: "Overwatch-Text";
+  src: url("Fonts/big_noodle_titling.ttf"); }
+body {
+  font: 100% Overwatch-Title, Overwatch-Text, sans-serif;
+  background-color: #43484c; }
+
+#watchHolder {
+  background-color: #43484c;
+  border: 1px #f99e1a;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 720px;
+  height: 500px;
+  padding: 30px; }
+  #watchHolder img {
+    max-height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+#watch {
+  text-align: center;
+  font-size: 100;
+  background-color: #43484c;
+  color: white; }
+
+.altColor {
+  color: #f99e1a; }
